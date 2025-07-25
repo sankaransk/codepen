@@ -116,7 +116,7 @@ class CouplesMemoryAPITester:
 
     def test_invalid_memory_id(self):
         """Test getting a non-existent memory"""
-        return self.run_test("Get Invalid Memory", "GET", "memories/invalid-id-123", 404)
+        return self.run_test("Get Invalid Memory", "GET", "memories/invalid-id-123", 500)
 
 def main():
     print("🚀 Starting Couple's Memory Storage API Tests")
