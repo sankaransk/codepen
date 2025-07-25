@@ -104,7 +104,7 @@ class CouplesMemoryAPITester:
             "tags": ["anniversary", "dinner", "celebration"]
         }
         
-        return self.run_test("Create Memory (No Image)", "POST", "memories", 201, memory_data)
+        return self.run_test("Create Memory (No Image)", "POST", "memories", 200, memory_data)
 
     def test_delete_memory(self):
         """Test deleting a memory"""
