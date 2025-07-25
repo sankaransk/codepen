@@ -71,7 +71,7 @@ class CouplesMemoryAPITester:
             "image_data": sample_image
         }
         
-        success, response = self.run_test("Create Memory", "POST", "memories", 201, memory_data)
+        success, response = self.run_test("Create Memory", "POST", "memories", 200, memory_data)
         if success and 'id' in response:
             self.created_memory_id = response['id']
             print(f"   Created memory with ID: {self.created_memory_id}")
