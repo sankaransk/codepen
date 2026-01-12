@@ -1,0 +1,159 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+  /* You can change colors here: https://cssgradient.io/ */
+  overflow-x: hidden;
+  padding: 20px;
+  position: relative;
+}
+
+/* Background Floating Shapes */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  animation: float 10s infinite alternate;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: #a18cd1;
+  top: -50px;
+  left: -50px;
+}
+
+.shape-2 {
+  width: 250px;
+  height: 250px;
+  background: #fbc2eb;
+  bottom: -50px;
+  right: -50px;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(30px, 30px);
+  }
+}
+
+/* Container for all content */
+.container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* THE GLASS EFFECT CLASS */
+.glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px); /* The Blur Effect */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  text-align: center;
+  color: #4a4a4a;
+}
+
+h1 {
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #553c5a;
+  margin-bottom: 20px;
+}
+
+/* Carousel Styling */
+.carousel-container {
+  width: 100%;
+  overflow: hidden; /* Hides images that are "off screen" */
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%; /* Each slide takes full width */
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Buttons */
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #553c5a;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #fff;
+  transform: scale(1.1);
+}
+
+/* Music Button Styling */
+.music-btn {
+  position: fixed; /* Stays in place when scrolling */
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000; /* Ensures it sits on top of everything */
+  width: 150px;
+  height: 50px;
+  border-radius: 50px; /* Pill shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #553c5a;
+  background: rgba(255, 255, 255, 0.4); /* Slightly more opaque */
+  transition: all 0.3s ease;
+}
+
+/* Add a pulse animation so she notices it */
+.music-btn:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.6);
+}
